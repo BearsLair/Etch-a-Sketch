@@ -35,12 +35,19 @@ size = document.querySelector("#sizeBtn");
 
 size.addEventListener("click", () => {
   let newSize = document.querySelector("#userInput").value;
-  let userInput = newSize;
 
-  document.querySelectorAll(".row").forEach((row) => row.remove());
+  if (newSize < 16 || newSize > 100) {
+    alert("Please choose a number from 16 to 100.");
+  } else {
+    let userInput = newSize;
 
-  console.log(userInput);
+    document.querySelectorAll(".row").forEach((row) => row.remove());
 
-  drawGrid(userInput);
-  applyColor();
+    console.log(userInput);
+
+    drawGrid(userInput);
+    applyColor();
+
+    document.querySelector("#userInput").value = "";
+  }
 });
