@@ -1,12 +1,17 @@
 const container = document.querySelector("div.container");
 
-for (let i = 1; i <= 32; i++) {
+let userInput = 100;
+
+for (let i = 1; i <= userInput; i++) {
+  console.log(userInput);
   const row = document.createElement("div");
   row.classList.add("row");
   container.appendChild(row);
-  for (let j = 1; j <= 32; j++) {
+  for (let j = 1; j <= userInput; j++) {
     const square = document.createElement("div");
     square.classList.add("square");
+    square.style.height = (1 / userInput) * 320 + "px";
+    square.style.width = (1 / userInput) * 320 + "px";
     row.appendChild(square);
   }
 }
